@@ -1,0 +1,21 @@
+CREATE TABLE 'user' (
+	'user_id' INT NOT NULL PRIMARY KEY AUTOINCREMENT,
+	'user_name' TEXT
+	);
+
+CREATE TABLE 'pins' (
+	'id_pins' INTEGER PRIMARY KEY AUTOINCREMENT,
+	'url' TEXT,
+	'id_user_fk' INTEGER,
+	CONSTRAINT	fk_id_user FOREIGN KEY (id_user_fk)
+	REFERENCES user(user_id)
+	);
+	
+CREATE TABLE 'comment' (
+	'id_comment' INTEGER PRIMARY KEY AUTOINCREMENT,
+	'url' TEXT,
+	'comment' TEXT,
+	'id_pins_fk' INTEGER,
+	CONSTRAINT	fk_id_pins FOREIGN KEY (id_pins_fk)
+	REFERENCES pins(id_pins)
+	);

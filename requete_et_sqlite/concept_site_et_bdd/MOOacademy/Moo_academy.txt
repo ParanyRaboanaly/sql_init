@@ -1,0 +1,14 @@
+CREATE TABLE 'cours' (
+	'id_cours' INTEGER PRIMARY KEY AUTOINCREMENT,
+	'title_cours' TEXT,
+	'descript' TEXT
+	);
+
+CREATE TABLE 'lesson' (
+	'id_lesson' INTEGER PRIMARY KEY AUTOINCREMENT,
+	'title_lesson' TEXT,
+	'body' TEXT,
+	'id_cours_fk' INTEGER,
+	CONSTRAINT	fk_id_cours FOREIGN KEY (id_cours_fk)
+	REFERENCES cours(id_cours)
+	);

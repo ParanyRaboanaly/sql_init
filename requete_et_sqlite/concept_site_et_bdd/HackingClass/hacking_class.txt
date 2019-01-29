@@ -1,0 +1,12 @@
+CREATE TABLE 'eleve' (
+	'id_ele' INTEGER PRIMARY KEY AUTOINCREMENT,
+	'nom_eleve' TEXT,
+	'cle_cou' INTEGER,
+	CONSTRAINT fk_elev_cou FOREIGN KEY (cle_cou)
+	REFERENCES cours_hackclass(id_cours)
+	);
+
+
+CREATE TABLE 'cours_hackclass' (
+	'id_cou' INTEGER PRIMARY KEY  AUTOINCREMENT,  'nom_cou' TEXT
+	);
